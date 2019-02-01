@@ -4,7 +4,7 @@
 
 NeuroNER is a program that performs named-entity recognition (NER). Website: [neuroner.com](http://neuroner.com).
 
-This page gives step-by-step instructions to install and use NeuroNER. If you already have Python 3.5 and TensorFlow 1.0, you can directly jump to the [Downloading NeuroNER](#downloading-neuroner).
+This page gives step-by-step instructions to install and use NeuroNER. If you already have Python 3 and TensorFlow 1.0, you can directly jump to the [Downloading NeuroNER](#downloading-neuroner).
 
 
 ## Table of Contents
@@ -27,18 +27,16 @@ This page gives step-by-step instructions to install and use NeuroNER. If you al
 
 ### Requirements
 
-NeuroNER relies on Python 3.5, TensorFlow 1.0+, and optionally on BRAT:
+NeuroNER relies on Python 3, TensorFlow 1.0+, and optionally on BRAT:
 
-- Python 3.5: NeuroNER does not work with Python 2.x. On Windows, it has to be Python 3.5 64-bit.
+- Python 3: NeuroNER does not work with Python 2.x. On Windows, it has to be Python 3.5 64-bit or later.
 - TensorFlow is a library for machine learning. NeuroNER uses it for its NER engine, which is based on neural networks. Official website: [https://www.tensorflow.org](https://www.tensorflow.org)
 - BRAT (optional) is a web-based annotation tool. It only needs to be installed if you wish to conveniently create annotations or view the predictions made by NeuroNER. Official website: [http://brat.nlplab.org](http://brat.nlplab.org)
 
 Installation instructions for TensorFlow, Python 3.5, and (optional) BRAT are given below for different types of operating systems:
 
-- [Mac](install_mac.md)
-- [Ubuntu](install_ubuntu.md)
+- [Mac and Linux](install_osx_linux.md)
 - [Windows](install_windows.md)
-
 
 Alternatively, you can use this [installation script](install_ubuntu.sh) for Ubuntu, which:
 
@@ -51,7 +49,6 @@ To use this script, run the following command from the terminal:
 ```
 wget https://raw.githubusercontent.com/Franck-Dernoncourt/NeuroNER/master/install_ubuntu.sh; bash install_ubuntu.sh
 ```
-
 
 ## Downloading NeuroNER
 
@@ -75,8 +72,6 @@ unzip glove.6B.100d.zip
 
 NeuroNER is now ready to run.
 
-
-
 ## Using NeuroNER
 
 By default NeuroNER is configured to train and test on the CoNLL-2003 dataset. To start the training:
@@ -98,7 +93,6 @@ For example, to reduce the number of training epochs and not use any pre-trained
 ```
 python3.5 main.py --maximum_number_of_epochs=2 --token_pretrained_embedding_filepath=""
 ```
-
 
 To perform NER on some plain texts using a pre-trained model:
 
@@ -128,8 +122,6 @@ We provide several examples of datasets:
 - [`data/conll2003/en`](data/conll2003/en): annotated dataset with the CoNLL-2003 format, containing 3 files (`train.txt`, `valid.txt` and  `test.txt`).
 - [`data/example_unannotated_texts`](data/example_unannotated_texts): unannotated dataset with the BRAT format, containing 1 folder (`deploy/`). Note that the BRAT format with no annotation is the same as plain texts.
 
-
-
 ### Using a pretrained model
 
 In order to use a pretrained model, the `pretrained_model_folder` parameter in the [`src/parameters.ini`](src/parameters.ini) configuration file must be set to the folder containing the pretrained model. The following parameters in the [`src/parameters.ini`](src/parameters.ini) configuration file must also be set to the same values as in the configuration file located in the specified `pretrained_model_folder`:
@@ -145,7 +137,6 @@ use_crf
 tagging_format
 tokenizer
 ```
-
 
 ### Sharing a pretrained model
 
