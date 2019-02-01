@@ -57,8 +57,14 @@ setup(
         'scikit-learn>=0.20.2',
         'scipy>=1.2.0',
         'spacy>=2.0.18',
-        'tensorflow>=1.12.0'
         ],
+
+    # allow user to select flavour of TensorFlow 
+    # https://github.com/tensorflow/tensorflow/issues/7166
+    extras_require={
+        "cpu": ["tensorflow>=1.12.0"],
+        "gpu": ["tensorflow-gpu>=1.0.0"],
+    }
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
