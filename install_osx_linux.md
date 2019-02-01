@@ -1,4 +1,4 @@
-# Installing NeuroNER requirements on Mac OS X
+# Installing NeuroNER on Mac OSX and Linux
 
 NeuroNER requires Python 3.6 or later. You may choose to handle a package like Anaconda to help manage dependencies.
 

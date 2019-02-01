@@ -1,4 +1,4 @@
-# Installing NeuroNER requirements on Microsoft Windows
+# Installing NeuroNER on MS Windows
 
 NeuroNER requires Python 3.6 or later. You may choose to handle a package like Anaconda to help manage dependencies. These instructions are tested on Windows 7 SP1 64-bit.
 
