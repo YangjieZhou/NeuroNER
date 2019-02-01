@@ -17,5 +17,5 @@ unzip glove.6B.100d.zip
 
 # Going back to NeuroNER src folder
 ls -la
-cd ../../src
+cd ../../neuroner
 ls -la
