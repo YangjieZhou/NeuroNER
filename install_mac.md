@@ -1,23 +1,24 @@
 # Installing NeuroNER requirements on Mac OS X
 
+NeuroNER requires Python 3.6 or later. You may choose to handle a package like Anaconda to help manage dependencies.
 
-You need to install Python 3.5 (e.g., from https://www.python.org/ftp/python/3.5.3/python-3.5.3-macosx10.6.pkg)
+To install NeuroNER:
 
-To install TensorFlow:
 ```
 # For CPU support (no GPU support):
-sudo pip3 install tensorflow
+pip3 install neuroner[cpu]
+
 # For GPU support:
-sudo pip3 install tensorflow-gpu
+pip3 install neuroner[gpu]
 ```
 
-Note that for GPU support, [GPU requirements for Tensorflow](https://www.tensorflow.org/install/install_mac) must be satisfied.
+Note that for GPU support, [GPU requirements for Tensorflow](https://www.tensorflow.org/install/) must be satisfied.
 
-To install a few more Python packages which NeuroNER depends on:
+You will also need to download the English language module for Spacy:
 
 ```
-sudo pip3 install -U networkx matplotlib scikit-learn scipy spacy pycorenlp
-python3.5 -m spacy download en
+# Load the Spacy English module
+python -m spacy download en
 ```
 
 To install BRAT (optional, you just need it if you want to easily create, change or view the annotations):
@@ -36,4 +37,4 @@ python standalone.py
 
 BRAT should now be accessible through the web browser at [http://127.0.0.1:8001](http://127.0.0.1:8001).
 
-You can now [download and run NeuroNER](README.md#downloading-neuroner).
+You can now run NeuroNER.

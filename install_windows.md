@@ -1,67 +1,44 @@
 # Installing NeuroNER requirements on Microsoft Windows
 
-(tested on Windows 7 SP1 64-bit)
+NeuroNER requires Python 3.6 or later. You may choose to handle a package like Anaconda to help manage dependencies. These instructions are tested on Windows 7 SP1 64-bit.
 
 ## Table of Contents
 
 <!-- toc -->
 
-- [Python 3.5, TensorFlow, and several other Python packages](#python-35-and-tensorflow)
-- [SpaCy](#spacy)
+- [Python, TensorFlow, and several other Python packages](#python-35-and-tensorflow)
 - [Perl](#perl)
 - [TensorBoard](#tensorboard)
 
 <!-- tocstop -->
 
-## Python 3.5, TensorFlow, and several other Python packages
-First, install Python 3.5 64-bit and TensorFlow following these instructions: [How to install TensorFlow on Windows?](http://stackoverflow.com/a/39902815/395857)
+## Python, TensorFlow, and several other Python packages
+First, install Python 64-bit and TensorFlow following these instructions: [How to install TensorFlow on Windows?](http://stackoverflow.com/a/39902815/395857)
 
-Then, from the command prompt (make sure `pip` is connected to Python 3.5. You can verify it by running `pip -V`):
+Then, from the command prompt (make sure `pip` is connected to Python 3. You can verify it by running `pip -V`):
 
-```
-pip install -U networkx matplotlib scikit-learn scipy pycorenlp
-```
-
-## SpaCy
-You need to install SpaCy. To do so, 3 solutions.
-
-Solution 1: Installing Visual Studio Express 2015 (https://www.visualstudio.com/vs/visual-studio-express, free but takes 12 GB of space on the hard drive), then run:
-```
-pip install -U spacy
-python -m spacy.en.download
-```
-
-Solution 2: Use Anaconda, in which case there is no need to install Visual Studio Express 2015:
+To install NeuroNER:
 
 ```
-conda config --add channels conda-forge
-conda install spacy
-python -m spacy.en.download
+# For CPU support (no GPU support):
+pip3 install neuroner[cpu]
+
+# For GPU support:
+pip3 install neuroner[gpu]
+```
+
+Note that for GPU support, [GPU requirements for Tensorflow](https://www.tensorflow.org/install/) must be satisfied.
+
+You will also need to download the English language module for Spacy:
+
+```
+# Load the Spacy English module
 python -m spacy download en
-
-```
-
-Solution 3: Download from http://www.lfd.uci.edu/~gohlke/pythonlibs these precompiled Python packages (you may use a more recent version of the packages, but it should end with `-cp35-cp35m-win_amd64.whl`, which indicates they are compiled for Python 3.5 64-bit.):
-
-- `cymem-1.31.2-cp35-cp35m-win_amd64.whl`
-- `murmurhash-0.26.4-cp35-cp35m-win_amd64.whl`
-- `preshed-1.0.0-cp35-cp35m-win_amd64.whl`
-- `thinc-6.5.2-cp35-cp35m-win_amd64.whl`
-- `spacy-1.8.2-cp35-cp35m-win_amd64.whl`
-
-Then, run from the command prompt:
-
-```
-pip install cymem-1.31.2-cp35-cp35m-win_amd64.whl
-pip install murmurhash-0.26.4-cp35-cp35m-win_amd64.whl
-pip install preshed-1.0.0-cp35-cp35m-win_amd64.whl
-pip install thinc-6.5.2-cp35-cp35m-win_amd64.whl
-pip install spacy-1.8.2-cp35-cp35m-win_amd64.whl
-python -m spacy.en.download
 ```
 
 ## Perl
-You also need to install Perl (because the official CoNLL-2003 evaluation script is written in Perl): http://strawberryperl.com
+
+You also need to install Perl, because the official CoNLL-2003 evaluation script is written in this language: http://strawberryperl.com
 
 Make sure the `perl.exe` binary is in your `Path` system environment variable:
 
@@ -91,9 +68,8 @@ python standalone.py
 
 BRAT should now be accessible through the web browser at [http://127.0.0.1:8001](http://127.0.0.1:8001).
 
-
-
 ## TensorBoard (optional)
- The `tensorboard.exe` binary should also be in your `Path` system environment variable, if you plan to use TensorBoard (optional).
 
-You can now [download and run NeuroNER](README.md#downloading-neuroner).
+The `tensorboard.exe` binary should also be in your `Path` system environment variable, if you plan to use TensorBoard (optional).
+
+You can now run NeuroNER.
