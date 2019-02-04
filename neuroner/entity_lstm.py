@@ -1,8 +1,8 @@
 import tensorflow as tf
 import re
 import time
-import utils_tf
-import utils_nlp
+from neuroner import utils_tf
+from neuroner import utils_nlp
 import os
 import pickle
 

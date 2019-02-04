@@ -1,24 +1,24 @@
 import matplotlib
 matplotlib.use('Agg')
-import train
-import dataset as ds
+from neuroner import train
+from neuroner import dataset as ds
 import tensorflow as tf
 from tensorflow.contrib.tensorboard.plugins import projector
-from entity_lstm import EntityLSTM
-import utils
+from neuroner.entity_lstm import EntityLSTM
+from neuroner import utils
 import os
-import conll_to_brat
+from neuroner import conll_to_brat
 import glob
 import codecs
 import shutil
 import time
 import copy
-import evaluate
+from neuroner import evaluate
 import random
 import pickle
-import brat_to_conll
+from neuroner import brat_to_conll
 import numpy as np
-import utils_nlp
+from neuroner import utils_nlp
 import distutils.util
 import configparser
 from pprint import pprint
