@@ -10,7 +10,7 @@ import os
 import argparse
 from argparse import RawTextHelpFormatter
 import sys
-from neuroner import NeuroNER
+from neuroner import neuroner
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -242,7 +242,7 @@ def main(argv=sys.argv):
     # Parse arguments
     arguments = parse_arguments(argv[1:])
     
-    nn = NeuroNER(**arguments)
+    nn = neuroner.NeuroNER(**arguments)
     nn.fit()
     nn.close() 
 
