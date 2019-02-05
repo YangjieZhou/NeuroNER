@@ -1,32 +1,35 @@
-import matplotlib
-matplotlib.use('Agg')
-from neuroner import train
-from neuroner import dataset as ds
-import tensorflow as tf
-from tensorflow.contrib.tensorboard.plugins import projector
-from neuroner.entity_lstm import EntityLSTM
-from neuroner import utils
-import os
-from neuroner import conll_to_brat
-import glob
 import codecs
+import configparser
+import copy
+import distutils.util
+import glob
+import os
+import pickle
+from pprint import pprint
+import random
 import shutil
 import time
-import copy
-from neuroner import evaluate
-import random
-import pickle
-from neuroner import brat_to_conll
+import warnings
+
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import tensorflow as tf
+from tensorflow.contrib.tensorboard.plugins import projector
+
+from neuroner import train
+from neuroner import dataset as ds
+from neuroner.entity_lstm import EntityLSTM
+from neuroner import utils
+from neuroner import conll_to_brat
+from neuroner import evaluate
+from neuroner import brat_to_conll
 from neuroner import utils_nlp
-import distutils.util
-import configparser
-from pprint import pprint
+
 # http://stackoverflow.com/questions/42217532/tensorflow-version-1-0-0-rc2-on-windows-opkernel-op-bestsplits-device-typ
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 print('NeuroNER version: {0}'.format('1.0-dev'))
 print('TensorFlow version: {0}'.format(tf.__version__))
-import warnings
 warnings.filterwarnings('ignore')
 
 
