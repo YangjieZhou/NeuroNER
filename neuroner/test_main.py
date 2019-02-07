@@ -2,10 +2,11 @@
 Tests for main.py
 '''
 
-import unittest
 import os
-from neuroner import main
 from shutil import rmtree
+import unittest
+
+from neuroner import main
 
 class TestMain(unittest.TestCase):
 

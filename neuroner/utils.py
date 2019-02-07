@@ -2,11 +2,11 @@
 Miscellaneous utility functions
 '''
 import collections
-import operator
-import os
-import time
 import datetime
+import os
+import operator
 import shutil
+import time
 
 def order_dictionary(dictionary, mode, reverse=False):
     '''

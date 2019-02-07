@@ -1,10 +1,12 @@
-import tensorflow as tf
-import re
-import time
-from neuroner import utils_tf
-from neuroner import utils_nlp
 import os
 import pickle
+import re
+import time
+
+import tensorflow as tf
+
+from neuroner import utils_tf
+from neuroner import utils_nlp
 
 def bidirectional_LSTM(input, hidden_state_dimension, initializer, sequence_length=None, output_sequence=True):
 

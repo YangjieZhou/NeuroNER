@@ -1,14 +1,16 @@
 import sklearn.preprocessing
-from neuroner import utils
+
 import collections
 import codecs
-from neuroner import utils_nlp
-import re
-import time
-import token
 import os
 import pickle
 import random
+import re
+import time
+import token
+
+from neuroner import utils
+from neuroner import utils_nlp
 
 
 class Dataset(object):

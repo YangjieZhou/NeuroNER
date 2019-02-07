@@ -1,12 +1,13 @@
+import json
+import os
+import time
+
 import numpy as np
 import matplotlib.pyplot as plt
 import sklearn.metrics
-import os
-from neuroner import utils_plots
-import json
-import time
-from neuroner import utils_nlp
 
+from neuroner import utils_plots
+from neuroner import utils_nlp
 
 def assess_model(y_pred, y_true, labels, target_names, labels_with_o, target_names_with_o, dataset_type, stats_graph_folder, epoch_number, parameters,
                  evaluation_mode='bio', verbose=False):

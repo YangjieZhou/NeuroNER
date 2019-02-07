@@ -1,11 +1,13 @@
+import codecs
 import os
-import tensorflow as tf
+import pickle
+
 import numpy as np
 import sklearn.metrics
+import tensorflow as tf
+
 from neuroner.evaluate import remap_labels
-import pickle
 from neuroner import utils_tf
-import codecs
 from neuroner import utils_nlp
 #from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoint_file
 

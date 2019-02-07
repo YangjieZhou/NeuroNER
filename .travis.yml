@@ -1,18 +1,26 @@
+# set the OS
 sudo: required
 dist: trusty
 os:
     - linux
+
+# set the language
 language: python
-python: 
-  - "3.6"
+python:
+    - "3.6"
+
 # command to install dependencies
 install:
   - bash .travis_install_ubuntu.sh
   - pip install -r requirements.txt
   - python -m spacy download en
+  # install the package
+  - pip install .
   # ensure that NeuroNER doesn't perform too many epochs (Travis jobs are limited to 50 minutes)
   - sed -i 's/maximum_number_of_epochs = 100/maximum_number_of_epochs = 1/g' neuroner/parameters.ini
+
+# command to run tests
 script:  
   - cd neuroner
-  - python main.py
-  - python main.py --train_model=False --use_pretrained_model=True --dataset_text_folder=../data/example_unannotated_texts 
+  - python neuroner
+  - python neuroner --train_model=False --use_pretrained_model=True --dataset_text_folder=../data/example_unannotated_texts 
