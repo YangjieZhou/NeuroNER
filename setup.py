@@ -64,7 +64,7 @@ setup(
     extras_require={
         "cpu": ["tensorflow>=1.12.0"],
         "gpu": ["tensorflow-gpu>=1.0.0"],
-    }
+    },
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
@@ -91,10 +91,10 @@ setup(
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
-    # entry_points={
-    #     'console_scripts': [
-    #         'sample=sample:main',
-    #     ],
-    # },
+    entry_points={
+        'console_scripts': [
+            'neuroner = neuroner.__main__:main',
+        ],
+    },
 
 )
