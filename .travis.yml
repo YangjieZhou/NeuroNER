@@ -22,5 +22,5 @@ install:
 # command to run tests
 script:  
   - cd neuroner
-  - python neuroner
-  - python neuroner --train_model=False --use_pretrained_model=True --dataset_text_folder=../data/example_unannotated_texts 
+  - neuroner
+  - neuroner --train_model=False --use_pretrained_model=True --dataset_text_folder=../data/example_unannotated_texts 
